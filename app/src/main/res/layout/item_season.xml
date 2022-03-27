@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.fongfuse.friendsapp.domain.model.Friends.Season" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:background="@color/black_85"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                setImageUrl="@{model.posterPath}"
+                android:layout_width="130dp"
+                android:layout_height="180dp"
+                android:scaleType="fitXY"
+                tools:src="@color/material_dynamic_primary20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotoslab_bold"
+                    android:text="@{model.name}"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    tools:text="Title" />
+
+                <TextView
+                    setYearAndEpisodes_date="@{model.airDate}"
+                    setYearAndEpisodes_episodes="@{model.episodeCount}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/robotoslab_bold"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    tools:text="Year" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/robotoslab_regular"
+                    android:maxLines="3"
+                    android:text="@{model.overview}"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    tools:text="fdskljfkldsjklfjdsklfjsdklfjklsdjfklsdjkfdsjklflkdfjksdljfklsdjfklsdjklfjsdklfjdskjflksdjfklsdkfnsdkljflksdjflksdjlkfjsdkfl" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>
